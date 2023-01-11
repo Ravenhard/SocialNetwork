@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Ravenhard/SocialNetwork/static/css/main.f0069339.css",
+    "main.js": "/Ravenhard/SocialNetwork/static/js/main.a578ceca.js",
+    "static/css/737.f4fab920.chunk.css": "/Ravenhard/SocialNetwork/static/css/737.f4fab920.chunk.css",
+    "static/js/737.23745c90.chunk.js": "/Ravenhard/SocialNetwork/static/js/737.23745c90.chunk.js",
+    "static/css/630.bbf8a7c9.chunk.css": "/Ravenhard/SocialNetwork/static/css/630.bbf8a7c9.chunk.css",
+    "static/js/630.9bf4c8a3.chunk.js": "/Ravenhard/SocialNetwork/static/js/630.9bf4c8a3.chunk.js",
+    "static/js/787.2b0bd88f.chunk.js": "/Ravenhard/SocialNetwork/static/js/787.2b0bd88f.chunk.js",
+    "static/media/vector-users-icon.jpg": "/Ravenhard/SocialNetwork/static/media/vector-users-icon.826511f6d29e8f7f2d0a.jpg",
+    "index.html": "/Ravenhard/SocialNetwork/index.html",
+    "static/media/preloader.svg": "/Ravenhard/SocialNetwork/static/media/preloader.9d412c8ee5aab36b0b473b9df2b6216d.svg",
+    "main.f0069339.css.map": "/Ravenhard/SocialNetwork/static/css/main.f0069339.css.map",
+    "main.a578ceca.js.map": "/Ravenhard/SocialNetwork/static/js/main.a578ceca.js.map",
+    "737.f4fab920.chunk.css.map": "/Ravenhard/SocialNetwork/static/css/737.f4fab920.chunk.css.map",
+    "737.23745c90.chunk.js.map": "/Ravenhard/SocialNetwork/static/js/737.23745c90.chunk.js.map",
+    "630.bbf8a7c9.chunk.css.map": "/Ravenhard/SocialNetwork/static/css/630.bbf8a7c9.chunk.css.map",
+    "630.9bf4c8a3.chunk.js.map": "/Ravenhard/SocialNetwork/static/js/630.9bf4c8a3.chunk.js.map",
+    "787.2b0bd88f.chunk.js.map": "/Ravenhard/SocialNetwork/static/js/787.2b0bd88f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f0069339.css",
+    "static/js/main.a578ceca.js"
+  ]
+}
