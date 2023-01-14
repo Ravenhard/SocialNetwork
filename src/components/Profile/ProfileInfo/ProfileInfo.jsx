@@ -17,9 +17,6 @@ const ProfileInfo = (props) => {
 
     return (
         <div>
-            {/*<div>*/}
-            {/*    <img src="https://studychinese.ru/content/dictionary/pictures/25/12944.jpg"/>*/}
-            {/*</div>*/}
             <div className={s.descriptionBlock}>
                 <img src={props.profile.photos.large || userPhoto} className={s.namePhoto} />
                 { props.isOwner && <input type={'file'} onChange={onMainPhotoSelected} /> }

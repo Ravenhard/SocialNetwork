@@ -36,12 +36,18 @@ export const profileReducer = (state = initialState, action) => {
             };
 
         }
-
         case SET_STATUS: {
             return {
                 ...state,
                 status: action.status,
             }
+        }
+        case SAVE_PHOTO_SUCCESS: {
+            debugger
+            return {
+                ...state,
+                profile: {...state.profile, photos: action.photos},
+            };
         }
 
         default:
@@ -49,7 +55,6 @@ export const profileReducer = (state = initialState, action) => {
     }
     return state;
 }
-
 export const addPostActionCreator = (newPostText) => {
     return {
         type: ADD_POST,
@@ -99,7 +104,7 @@ export const savePhoto = (file) => async (dispatch) => {
     let responce = await profileAPI.savePhoto(file);
 
     if (responce.data.resultCode === 0) {
-        dispatch(savePhotoSuccess(responce.data.photos));
+        dispatch(savePhotoSuccess(responce.data.data.photos));
     }
 }
 

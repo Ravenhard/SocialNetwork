@@ -38,7 +38,7 @@ class ProfileContainer extends React.Component {
                          status={this.props.status}
                          isOwner = {!this.props.router.params.userId}
                          updateStatus={this.props.updateStatus}
-                         savePhoto={this.photo.savePhoto}
+                         savePhoto={this.props.savePhoto}
                 />
             </div>
         )
