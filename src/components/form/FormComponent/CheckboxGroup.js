@@ -12,14 +12,18 @@ function CheckboxGroup (props) {
                     return options.map( option => {
                         return (
                             <React.Fragment key={option.key} >
-                                <input
+                                <div>
+                                    <input
                                     type='checkbox'
                                     id={option.value}
                                     {...field}
                                     value={option.value}
                                     checked={field.value.includes(option.value)}
                                 />
-                                <label htmlFor={option.value}>{option.key}</label>
+                                </div>
+                                <div>
+                                    <label htmlFor={option.value}>{option.key}</label>
+                                </div>
                             </React.Fragment>
                         )
                     })

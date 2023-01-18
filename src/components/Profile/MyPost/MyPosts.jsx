@@ -1,11 +1,11 @@
 import s from './MyPosts.module.css'
-import React, {useRef} from "react";
+import React from "react";
 import Post from "./Post/Post";
 import ProfileAddMessageForm from "../../form/ProfileAddMessageForm";
 
 
 const MyPosts = (props) => {
-    let postsElements = props.posts.map( p=>  <Post message={p.message}  count = {p.likesCount}/> )
+    let postsElements = props.posts.map( p=>  <Post key={p.id} message={p.message}  count = {p.likesCount}/> )
 
     return (
         <div className={s.postsBlock}>

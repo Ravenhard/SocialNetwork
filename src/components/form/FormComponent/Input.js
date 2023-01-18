@@ -8,8 +8,10 @@ function Input(props) {
 
     return (
         <div className='form-control' >
-            <label htmlFor="name">{label}</label>
-            <Field id={name} name={name} {...rest} />
+            <div>
+                <label htmlFor="name">{label}</label>
+                <Field id={name} name={name} {...rest} />
+            </div>
             <ErrorMessage name={name} component={TextError} />
         </div>
     );
