@@ -1,7 +1,7 @@
 import './App.css';
 import React, {Suspense} from "react";
 import Navbar from "./components/Navbar/Navbar";
-import {Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes} from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import LoginForm from "./components/form/LoginForm";
@@ -16,8 +16,18 @@ const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsCo
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
 
 class App extends Component {
+
+    catchAllUnhandleErrors = (reason, promise) => {
+
+    }
+
     componentDidMount() {
         this.props.initializeApp();
+        window.addEventListener('unhandledrejection', this.catchAllUnhandleErrors)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('unhandledrejection', this.catchAllUnhandleErrors)
     }
 
     render() {
@@ -33,7 +43,11 @@ class App extends Component {
                     <div className='app-wrapper-content'>
                         <Suspense fallback={<div> СУЧАРА </div>}>
                             <Routes>
-                                <Route path='profile' element={
+                                <Route path='/' element={
+                                    <Navigate to="/profile"/>
+                                }>
+                                </Route>
+                                <Route path='/profile' element={
                                     <ProfileContainer/>}>
                                     <Route path=':userId' element={<ProfileContainer/>}/>
                                 </Route>
@@ -46,6 +60,10 @@ class App extends Component {
                                 <Route
                                     path="/login"
                                     element={<LoginForm/>}/>
+                                <Route
+                                    path="*"
+                                    element={<div> 404 NOT FOUND </div>}/>
+
                             </Routes>
                         </Suspense>
                     </div>

@@ -2,6 +2,7 @@ import * as Yup from "yup";
 import {Field, Form, Formik} from "formik";
 import FormikControl from "../../form/FormComponent/FormikControl";
 import React from "react";
+import {setStatus} from "../../../redux/profile-reducer";
 
 const ProfileDataForm = (props) => {
 

@@ -94,9 +94,13 @@ export const getStatus = (userId) =>
     }
 
 export const updateStatus = (status) => async (dispatch) => {
-    let responce = await profileAPI.updateStatus(status)
-    if (responce.data.resultCode === 0) {
-        dispatch(setStatus(status));
+    try {
+        let responce = await profileAPI.updateStatus(status)
+        if (responce.data.resultCode === 0) {
+            dispatch(setStatus(status));
+        }
+    } catch (error) {
+        debugger
     }
 }
 
@@ -114,6 +118,8 @@ export const saveProfile = (profile) => async (dispatch, getState) => {
 
     if (responce.data.resultCode === 0) {
         dispatch(getUserProfile(usetId));
+    } else {
+        dispatch()
     }
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Formik, Form} from 'formik'
+import {Formik, Form, Field} from 'formik'
 import * as Yup from 'yup'
 import FormikControl from "./FormComponent/FormikControl";
 import {connect} from "react-redux";
@@ -13,16 +13,17 @@ function LoginForm(props) {
     const initialValues = {
         email: '',
         password: '',
-        check: []
+        check: [],
+        captcha: ''
     }
     const validationSchema = Yup.object({
         email: Yup.string().email('Invalid email format').required('Required'),
         password: Yup.string().required('Required'),
-        check: Yup.array().required('Required')
+        check: Yup.array().required('Required'),
     })
     const onSubmit = (values, actions) => {
         actions.setStatus(undefined);
-        props.login(values.email, values.password, values.rememberMe, actions)
+        props.login(values.email, values.password, values.rememberMe, values.captcha, actions)
     }
 
     if (props.isAuth) {
@@ -58,6 +59,13 @@ function LoginForm(props) {
                                     name='check'
                                     options={checkboxOptions}
                                 />
+                                <div>
+                                    { props.captchaUrl && <img src={props.captchaUrl}/> }
+                                    { props.captchaUrl && <div>
+                                        <label htmlFor="captcha">Symbols from image: </label>
+                                        <Field name='captcha' type='input'/>
+                                    </div> }
+                                </div>
                                 <div style={{color: "red", }}>{
                                     formik.status ? <span> {formik.status}</span> : null
                                 }</div>
@@ -76,7 +84,8 @@ function LoginForm(props) {
 }
 
 const mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    captchaUrl: state.auth.captchaUrl
 })
 
 export default connect(mapStateToProps, {login})(LoginForm);
